@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
 import {
-  Shield,
-  Wallet,
-  BarChart3,
-  Globe,
-  LayoutDashboard,
-  ChevronRight,
-  AlertCircle,
-  ArrowRight,
-  CheckCircle2,
-  Github,
-  Twitter,
-  Linkedin,
+  Shield, Wallet, BarChart3, Globe, LayoutDashboard, ChevronRight,
+  AlertCircle, ArrowRight, CheckCircle2, Github, Twitter, Linkedin,
 } from 'lucide-react';
-import sendEmail from './sendEmail'; // Import the sendEmail function
+import sendEmail from './sendEmail';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -21,28 +11,16 @@ function App() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
-    // Validate email and userType
     if (!email || !userType) {
       alert('Please fill in all fields.');
       return;
     }
-  
     try {
-      // Call the sendEmail function and wait for it to complete
       await sendEmail(email, userType);
-  
-      // Log the signup (optional)
       console.log('Signup:', { email, userType });
-  
-      // Reset form fields (optional)
       setEmail('');
       setUserType(null);
-  
-      // Show success message (optional)
       alert('Thank you for joining the waitlist!');
-  
-      // Refresh the page after the email is sent
       window.location.reload();
     } catch (error) {
       console.error('Failed to send email:', error);
@@ -51,11 +29,11 @@ function App() {
   };
   
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-black text-white font-sans">
       {/* Announcement Bar */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-3 px-4">
-        <p className="text-sm font-medium flex items-center justify-center gap-2">
-          <AlertCircle className="w-4 h-4" />
+      <div className="bg-gradient-to-r from-blue-900 to-blue-800 py-2 px-4">
+        <p className="text-xs font-medium flex items-center justify-center gap-1">
+          <AlertCircle className="w-3 h-3" />
           LIMITED ACCESS: SECURE YOUR SPOT NOW!
         </p>
       </div>
@@ -63,30 +41,28 @@ function App() {
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 circuit-pattern"></div>
-        <div className="relative container mx-auto px-4 py-32">
+        <div className="relative container mx-auto px-6 py-20">
           <div className="max-w-3xl mx-auto text-center">
             <div className="slide-up">
-              <h1 className="text-6xl font-bold mb-8 leading-tight tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tighter">
                 THE FUTURE OF INFLUENCER MARKETING IS{' '}
                 <span className="gradient-text">FRAUD-FREE</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-12 leading-relaxed">
+              <p className="text-lg text-gray-400 mb-8 leading-relaxed">
                 Connect with verified influencers using AI fraud detection and smart contract payments.
-                No more fake engagement or wasted spend.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
                 <button
-                  className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg 
-                    hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-200 
-                    flex items-center gap-2 group"
+                  className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold text-base 
+                    hover:bg-blue-700 transition-all duration-200 shadow-lg flex items-center gap-1 group"
                   onClick={() => document.getElementById('cta-section')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   JOIN WAITLIST
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <div className="text-sm text-gray-500 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500" />
-                  <span>{100 - 42} brand spots remaining</span>
+                <div className="text-xs text-gray-400 flex items-center gap-1">
+                  <CheckCircle2 className="w-3 h-3 text-green-500" />
+                  <span>Limited spots remaining!</span>
                 </div>
               </div>
             </div>
@@ -95,50 +71,48 @@ function App() {
       </div>
 
       {/* Value Proposition Section */}
-      <div className="bg-gray-50 py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-16 text-center">WHY CHOOSE INVEX</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300
-                border border-transparent hover:border-blue-100">
-                <h3 className="text-2xl font-bold mb-4 gradient-text">FOR BRANDS</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3 group">
-                    <ArrowRight className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0 
+      <div className="bg-gray-900 py-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl font-bold mb-12 text-center">WHY CHOOSE INVEX</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-800 transition-all duration-200">
+                <h3 className="text-xl font-bold mb-4 gradient-text">FOR BRANDS</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 group">
+                    <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
-                    <span>Get trusted partnerships, zero fraud risk</span>
+                    <span className="text-sm text-gray-300">Get trusted partnerships, zero fraud risk</span>
                   </li>
-                  <li className="flex items-start gap-3 group">
-                    <ArrowRight className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0 
+                  <li className="flex items-start gap-2 group">
+                    <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
-                    <span>AI flags fake engagement before you invest</span>
+                    <span className="text-sm text-gray-300">AI flags fake engagement before you invest</span>
                   </li>
-                  <li className="flex items-start gap-3 group">
-                    <ArrowRight className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0 
+                  <li className="flex items-start gap-2 group">
+                    <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
-                    <span>Smart contracts pay only when KPIs are met</span>
+                    <span className="text-sm text-gray-300">Smart contracts pay only when KPIs are met</span>
                   </li>
                 </ul>
               </div>
-              <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300
-                border border-transparent hover:border-blue-100">
-                <h3 className="text-2xl font-bold mb-4 gradient-text">FOR INFLUENCERS</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3 group">
-                    <ArrowRight className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0 
+              <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-800 transition-all duration-200">
+                <h3 className="text-xl font-bold mb-4 gradient-text">FOR INFLUENCERS</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 group">
+                    <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
-                    <span>Gain verified status, attract top deals</span>
+                    <span className="text-sm text-gray-300">Gain verified status, attract top deals</span>
                   </li>
-                  <li className="flex items-start gap-3 group">
-                    <ArrowRight className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0 
+                  <li className="flex items-start gap-2 group">
+                    <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
-                    <span>Join exclusive network of proven creators</span>
+                    <span className="text-sm text-gray-300">Join exclusive network of proven creators</span>
                   </li>
-                  <li className="flex items-start gap-3 group">
-                    <ArrowRight className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0 
+                  <li className="flex items-start gap-2 group">
+                    <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
-                    <span>Access premium brand partnerships</span>
+                    <span className="text-sm text-gray-300">Access premium brand partnerships</span>
                   </li>
                 </ul>
               </div>
@@ -148,25 +122,25 @@ function App() {
       </div>
 
       {/* Services Section */}
-      <div className="py-24">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-16 text-center">OUR KEY SERVICES</h2>
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="py-16">
+        <div className="container mx-auto px-6">
+          <h2 className="text-2xl font-bold mb-12 text-center">OUR KEY SERVICES</h2>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group p-8 rounded-xl bg-white border border-gray-100 hover:border-blue-100 
-                  transition-all duration-300 hover:shadow-lg"
+                className="group p-6 rounded-lg bg-gray-800 border border-gray-700 hover:border-blue-800 
+                  transition-all duration-200"
               >
-                <service.icon className="w-8 h-8 text-blue-600 mb-6 
-                  group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                <ul className="space-y-3 text-gray-600">
+                <service.icon className="w-6 h-6 text-blue-500 mb-4 
+                  group-hover:scale-110 transition-transform duration-200" />
+                <h3 className="text-base font-bold mb-3">{service.title}</h3>
+                <ul className="space-y-2 text-gray-400">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 group/item">
-                      <ArrowRight className="w-4 h-4 text-blue-600 mt-1 flex-shrink-0 
+                    <li key={idx} className="flex items-start gap-2 group/item">
+                      <ArrowRight className="w-3 h-3 text-blue-500 mt-1 flex-shrink-0 
                         group-hover/item:translate-x-1 transition-transform" />
-                      <span>{feature}</span>
+                      <span className="text-xs">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -177,21 +151,21 @@ function App() {
       </div>
 
       {/* How it Works Section */}
-      <div className="bg-gray-50 py-24">
-        <div className="container mx-auto px-4">
+      <div className="bg-gray-900 py-16">
+        <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-16 text-center">HOW IT WORKS</h2>
-            <div className="space-y-12">
+            <h2 className="text-2xl font-bold mb-12 text-center">HOW IT WORKS</h2>
+            <div className="space-y-8">
               {steps.map((step, index) => (
-                <div key={index} className="flex items-start gap-6 group">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 
-                    text-white flex items-center justify-center font-bold text-xl flex-shrink-0
-                    group-hover:scale-110 transition-transform duration-300">
+                <div key={index} className="flex items-start gap-4 group">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 
+                    text-white flex items-center justify-center font-bold text-sm flex-shrink-0
+                    group-hover:scale-110 transition-transform duration-200">
                     {index + 1}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
+                    <h3 className="text-lg font-bold mb-1">{step.title}</h3>
+                    <p className="text-sm text-gray-400">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -201,20 +175,20 @@ function App() {
       </div>
 
       {/* CTA Section */}
-      <div id="cta-section" className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-b from-blue-50 to-white rounded-2xl p-12">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-6">LIMITED BETA ACCESS</h2>
-                <p className="text-xl text-gray-600 mb-8">
+      <div id="cta-section" className="py-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg p-8">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-bold mb-4">LIMITED BETA ACCESS</h2>
+                <p className="text-base text-gray-400 mb-6">
                   Only 100 brands & 500 influencers in Phase 1!
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
+              <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-xs font-medium text-gray-400 mb-1">
                     Email Address
                   </label>
                   <input
@@ -222,35 +196,35 @@ function App() {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 
-                      focus:ring-2 focus:ring-blue-200 transition-all duration-300"
+                    className="w-full px-3 py-2 rounded-md bg-gray-700 border border-gray-600 focus:border-blue-500 
+                      focus:ring-1 focus:ring-blue-400 text-white text-sm transition-all duration-200"
                     placeholder="you@company.com"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
                     I am a...
                   </label>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3">
                     <button
                       type="button"
                       onClick={() => setUserType('brand')}
-                      className={`px-4 py-3 rounded-lg border ${userType === 'brand'
-                        ? 'border-blue-600 bg-blue-50 text-blue-600'
-                        : 'border-gray-300 hover:border-blue-300'
-                      } transition-all duration-300`}
+                      className={`px-3 py-2 rounded-md border text-sm ${userType === 'brand'
+                        ? 'border-blue-600 bg-blue-900/30 text-blue-400'
+                        : 'border-gray-600 hover:border-gray-500 text-gray-300'
+                      } transition-all duration-200`}
                     >
                       Brand/Agency
                     </button>
                     <button
                       type="button"
                       onClick={() => setUserType('influencer')}
-                      className={`px-4 py-3 rounded-lg border ${userType === 'influencer'
-                        ? 'border-blue-600 bg-blue-50 text-blue-600'
-                        : 'border-gray-300 hover:border-blue-300'
-                      } transition-all duration-300`}
+                      className={`px-3 py-2 rounded-md border text-sm ${userType === 'influencer'
+                        ? 'border-blue-600 bg-blue-900/30 text-blue-400'
+                        : 'border-gray-600 hover:border-gray-500 text-gray-300'
+                      } transition-all duration-200`}
                     >
                       Influencer
                     </button>
@@ -259,12 +233,12 @@ function App() {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg 
-                    hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-200 
-                    flex items-center justify-center gap-2 group"
+                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-md font-semibold text-sm 
+                    hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-blue-900/50 
+                    flex items-center justify-center gap-1 group mt-2"
                 >
                   JOIN WAITLIST
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
             </div>
@@ -273,29 +247,29 @@ function App() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-50 py-12 border-t border-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-              <div className="text-2xl font-bold gradient-text">INVEX</div>
-              <div className="flex items-center gap-6">
-                <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors">
-                  <Twitter className="w-5 h-5" />
+      <footer className="bg-gray-900 py-8 border-t border-gray-800">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="text-xl font-bold gradient-text">INVEX</div>
+              <div className="flex items-center gap-4">
+                <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors">
+                  <Twitter className="w-4 h-4" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors">
-                  <Linkedin className="w-5 h-5" />
+                <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors">
+                  <Linkedin className="w-4 h-4" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors">
-                  <Github className="w-5 h-5" />
+                <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors">
+                  <Github className="w-4 h-4" />
                 </a>
               </div>
-              <div className="flex items-center gap-6 text-sm text-gray-500">
-                <a href="#" className="hover:text-gray-900 transition-colors">Terms</a>
-                <a href="#" className="hover:text-gray-900 transition-colors">Privacy</a>
-                <a href="#" className="hover:text-gray-900 transition-colors">Contact</a>
+              <div className="flex items-center gap-4 text-xs text-gray-500">
+                <a href="#" className="hover:text-gray-300 transition-colors">Terms</a>
+                <a href="#" className="hover:text-gray-300 transition-colors">Privacy</a>
+                <a href="#" className="hover:text-gray-300 transition-colors">Contact</a>
               </div>
             </div>
-            <div className="mt-8 text-center text-sm text-gray-500">
+            <div className="mt-6 text-center text-xs text-gray-600">
               © 2025 Invex. All rights reserved.
             </div>
           </div>
