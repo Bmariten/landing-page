@@ -4,6 +4,7 @@ import {
   AlertCircle, ArrowRight, CheckCircle2, Github, Twitter, Linkedin, Plus, Minus
 } from 'lucide-react';
 import sendEmail from './sendEmail';
+import { Analytics } from '@vercel/analytics/react'; // Import Analytics
 
 function App() {
   const [email, setEmail] = useState('');
@@ -32,7 +33,7 @@ function App() {
       alert('There was an error sending your email. Please try again.');
     }
   };
-  
+
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       {/* Announcement Bar */}
@@ -386,6 +387,9 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   );
 }
