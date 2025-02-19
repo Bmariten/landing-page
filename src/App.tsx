@@ -4,7 +4,7 @@ import {
   AlertCircle, ArrowRight, CheckCircle2, Github, Twitter, Linkedin, Plus, Minus
 } from 'lucide-react';
 import sendEmail from './sendEmail';
-import { Analytics } from '@vercel/analytics/react'; // Import Analytics
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -88,17 +88,17 @@ function App() {
                   <li className="flex items-start gap-2 group">
                     <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
-                    <span className="text-sm text-gray-700">Get trusted partnerships, zero fraud risk</span>
+                    <span className="text-sm text-gray-700">Build trusted partnerships with verified creators</span>
                   </li>
                   <li className="flex items-start gap-2 group">
                     <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
-                    <span className="text-sm text-gray-700">AI flags fake engagement before you invest</span>
+                    <span className="text-sm text-gray-700">Advanced fraud detection protects your investment</span>
                   </li>
                   <li className="flex items-start gap-2 group">
                     <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
-                    <span className="text-sm text-gray-700">Smart contracts pay only when KPIs are met</span>
+                    <span className="text-sm text-gray-700">Performance-based payment system</span>
                   </li>
                 </ul>
               </div>
@@ -108,17 +108,17 @@ function App() {
                   <li className="flex items-start gap-2 group">
                     <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
-                    <span className="text-sm text-gray-700">Gain verified status, attract top deals</span>
-                  </li>
-                  <li className="flex items-start gap-2 group">
-                    <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
-                      group-hover:translate-x-1 transition-transform" />
-                    <span className="text-sm text-gray-700">Join exclusive network of proven creators</span>
+                    <span className="text-sm text-gray-700">Join our exclusive verified creator network</span>
                   </li>
                   <li className="flex items-start gap-2 group">
                     <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
                       group-hover:translate-x-1 transition-transform" />
                     <span className="text-sm text-gray-700">Access premium brand partnerships</span>
+                  </li>
+                  <li className="flex items-start gap-2 group">
+                    <ArrowRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0 
+                      group-hover:translate-x-1 transition-transform" />
+                    <span className="text-sm text-gray-700">Guaranteed payments for completed campaigns</span>
                   </li>
                 </ul>
               </div>
@@ -272,8 +272,7 @@ function App() {
                     >
                       Brand/Agency
                     </button>
-                    <button
-                      type="button"
+                    <button type="button"
                       onClick={() => setUserType('influencer')}
                       className={`px-3 py-2 rounded-md border text-sm ${userType === 'influencer'
                         ? 'border-blue-600 bg-blue-50 text-blue-600'
@@ -388,7 +387,6 @@ function App() {
         </div>
       </footer>
 
-      {/* Vercel Analytics */}
       <Analytics />
     </div>
   );
@@ -397,52 +395,52 @@ function App() {
 const services = [
   {
     icon: Shield,
-    title: "AI-POWERED FRAUD DETECTION",
+    title: "FRAUD PREVENTION",
     features: [
-      "Real-time engagement analysis identifies bots",
-      "99.8% accuracy in verification",
-      "Continuous monitoring prevents fraud",
-      "Detailed authenticity reports",
+      "Advanced engagement verification",
+      "Continuous monitoring",
+      "Brand safety protection",
+      "Comprehensive security",
     ],
   },
   {
     icon: Wallet,
-    title: "SMART CONTRACT PAYMENTS",
+    title: "SECURE PAYMENTS",
     features: [
-      "Performance-based payment system",
-      "Automatic fund releases on KPI achievement",
-      "Blockchain-based dispute resolution",
-      "Flexible payment structures",
+      "Performance-based system",
+      "Automated processing",
+      "Protected transactions",
+      "Flexible payment options",
     ],
   },
   {
     icon: BarChart3,
-    title: "PREDICTIVE ROI MODELING",
+    title: "CAMPAIGN ANALYTICS",
     features: [
-      "AI-powered campaign forecasting",
-      "Historical data analysis",
-      "Customized optimization recommendations",
-      "Real-time performance adjustments",
+      "Performance tracking",
+      "Data-driven insights",
+      "Optimization tools",
+      "ROI measurement",
     ],
   },
   {
     icon: Globe,
-    title: "VERIFIED CREATOR NETWORK",
+    title: "CREATOR NETWORK",
     features: [
-      "Exclusive vetted influencer access",
-      "Industry-specific talent pools",
-      "Authentic engagement metrics",
-      "Direct creator connections",
+      "Verified partnerships",
+      "Quality talent pools",
+      "Direct connections",
+      "Global reach",
     ],
   },
   {
     icon: LayoutDashboard,
-    title: "CAMPAIGN MANAGEMENT",
+    title: "MANAGEMENT SUITE",
     features: [
-      "Centralized partnership platform",
-      "Real-time performance tracking",
-      "Automated reporting and insights",
-      "Collaborative workflow tools",
+      "Centralized dashboard",
+      "Workflow automation",
+      "Progress tracking",
+      "Team collaboration",
     ],
   },
 ];
@@ -451,48 +449,48 @@ const steps = [
   {
     title: "Apply for early access",
     description:
-      "Join our invite-only launch phase and be among the first to revolutionize your influencer marketing.",
+      "Join our exclusive launch phase and be among the first to transform your influencer marketing.",
   },
   {
-    title: "Complete AI fraud screening",
+    title: "Complete verification",
     description:
-      "Our advanced AI system verifies your profile and ensures platform integrity.",
+      "Our advanced system verifies your profile and ensures platform quality.",
   },
   {
-    title: "Use smart contracts",
+    title: "Start collaborating",
     description:
-      "Deploy campaigns with performance-based payments and guaranteed results.",
+      "Launch campaigns with performance-based partnerships and track results.",
   },
 ];
 
 const faqs = [
   {
     question: "What makes Invex different from other influencer platforms?",
-    answer: "Invex stands out with our AI-powered fraud detection system that ensures authentic engagement, smart contract payments that release funds only when KPIs are met, and our comprehensive analytics suite that provides predictive ROI modeling. Our platform combines these technologies to create a trusted ecosystem where brands can be confident in their partnerships."
+    answer: "Invex combines advanced fraud prevention, secure payment systems, and comprehensive analytics to create a trusted ecosystem for influencer marketing. Our platform ensures authentic partnerships and measurable results for both brands and creators."
   },
   {
-    question: "How does the fraud detection system work?",
-    answer: "Our advanced AI analyzes engagement patterns across multiple platforms to identify inauthentic activity with 99.8% accuracy. We continuously monitor for bots, purchased followers, and suspicious growth patterns to ensure all partnerships on our platform are genuine and deliver real value. This protects brands from reputation damage and financial losses."
+    question: "How does your verification system work?",
+    answer: "Our advanced system analyzes engagement patterns and account activity to verify authenticity. We continuously monitor partnerships to maintain platform integrity and protect both brands and creators."
   },
   {
-    question: "What are Smart Contract NFTs and how do they benefit me?",
-    answer: "Smart Contract NFTs create immutable partnership records on the blockchain. For brands, this means automated payments tied to verified performance metrics, reducing disputes and ensuring ROI. For creators, it means guaranteed payment when deliverables are met. The system also handles automatic royalty distributions and cross-border payments seamlessly."
+    question: "How do payments work on the platform?",
+    answer: "Our secure payment system is performance-based, ensuring fair compensation for creators while protecting brands' investments. Payments are automatically processed when campaign milestones are achieved."
   },
   {
     question: "How do I get started as a creator?",
-    answer: "Join our waitlist for early access, complete our AI fraud screening process to verify your authentic engagement, and gain access to our exclusive network of vetted creators. Once approved, you'll receive personalized skill development recommendations, access to mentorship opportunities, and be visible to premium brands seeking partnerships."
+    answer: "Join our waitlist for early access, complete our verification process, and gain access to our exclusive network. Once approved, you'll be visible to brands seeking authentic partnerships."
   },
   {
     question: "What pricing plans are available?",
-    answer: "We offer tiered subscription plans to meet different needs, from basic access to premium features with advanced analytics packages. Plans include access to our AI matching system, fraud detection tools, and contract management. Additional value-added services like certification programs and promotional opportunities are available as add-ons."
+    answer: "We offer flexible subscription plans designed to meet different needs and budgets. Each plan includes access to our core features, with optional add-ons for additional capabilities."
   },
   {
-    question: "Can Invex handle cross-border partnerships?",
-    answer: "Absolutely! We've built Invex with global partnerships in mind. Our platform includes multi-language support, cross-border payment solutions, and compliance automation to handle regional regulations. Our cultural sensitivity analysis also helps ensure partnerships resonate across different markets."
+    question: "Can Invex handle international partnerships?",
+    answer: "Yes! Our platform supports global partnerships with multi-language support and international payment processing, making it easy to collaborate across borders."
   },
   {
-    question: "How does the AI matching system work?",
-    answer: "Our AI analyzes numerous factors including content performance history, audience demographics, engagement authenticity, and brand alignment to predict partnership success rates. It continuously improves by learning from successful collaborations, providing increasingly accurate matches over time."
+    question: "How does your matching system work?",
+    answer: "Our platform analyzes various factors to suggest relevant partnerships, helping brands and creators find ideal matches while saving time and improving success rates."
   },
 ];
 
